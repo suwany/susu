@@ -1,0 +1,29 @@
+hazelcast:
+  port: 8106
+  multicast: false
+  group: ktCollector
+  password: 
+  cluster: 172.25.255.104,10.61.11.187
+  interfaces: 172.25.255.*
+
+spring:
+  datasource:
+    url: jdbc:h2:file:./demeterDB;AUTO_SERVER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    schema: classpath:db/schema.sql
+    initialize: false
+  jpa:
+    properties:
+      hibernate:
+        hdm2ddl:
+          auto: validate
+    show-sql: true
+logging:
+  file: collector.log
+  path: ./logs/
+  config: classpath:logback-spring.xml
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
