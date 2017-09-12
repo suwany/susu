@@ -1,7 +1,7 @@
 hazelcast:
   port: 8106
   multicast: false
-  group: ktCollector
+  group: kt-1Collector
   password: 
   cluster: 172.25.255.104,10.61.11.187
   interfaces: 172.25.255.*
